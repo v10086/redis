@@ -1,0 +1,27 @@
+{
+  "name": "v10086/redis",
+  "type": "library",
+  "description": "简约、高效、可靠的Redis操作句柄",
+  "keywords": [
+    "php",
+    "pdo",
+    "db",
+    "sql"
+  ],
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "v10086",
+      "email": "1146625863@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "v10086\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
