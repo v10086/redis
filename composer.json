@@ -4,9 +4,8 @@
   "description": "简约、高效、可靠的Redis操作句柄",
   "keywords": [
     "php",
-    "pdo",
-    "db",
-    "sql"
+    "phpredis",
+    "redis"
   ],
   "license": "Apache-2.0",
   "authors": [
