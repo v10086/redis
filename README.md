@@ -23,7 +23,7 @@ composer require v10086/redis:v1.0
 
 <?php
         //设置配置信息
-        \v10086\Redis::$cofing=[
+        \v10086\Redis::$config=[
                 'default'=>[
                     'host'          =>  'redis',//地址
                     'port'          => '6379',//端口

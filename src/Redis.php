@@ -6,24 +6,24 @@ class Redis {
     
     static $instance;//实例组
     static $handler;//当前操作句柄实例
-    static $cofing;//配置信息
+    static $config;//配置信息
     
     //初始化redis客服端并连接服务器端
     public static function connection($conn='default'){
         $conn && self::$handler=$conn;  !self::$handler && self::$handler ='default';
         
         if (!isset(self::$instance[self::$handler]) || !self::$instance[self::$handler]){
-            if(!self::$cofing){
+            if(!self::$config){
                 throw new \Exception('请先设置配置信息');
             }
-            $cofing=self::$cofing[self::$handler];
+            $config=self::$config[self::$handler];
             if(!isset(self::$instance[self::$handler]) || empty(self::$instance[self::$handler]) ){
                 self::$instance[self::$handler] =new \Redis();
-                $func = $cofing['persistent'] ? 'pconnect' : 'connect';
-                $cofing['timeout'] === false ?
-                self::$instance[self::$handler]->$func($cofing['host'], $cofing['port']) :
-                self::$instance[self::$handler]->$func($cofing['host'], $cofing['port'], $cofing['timeout']);
-                $cofing['password'] &&  self::$instance[self::$handler]->auth($cofing['password']);
+                $func = $config['persistent'] ? 'pconnect' : 'connect';
+                $config['timeout'] === false ?
+                self::$instance[self::$handler]->$func($config['host'], $config['port']) :
+                self::$instance[self::$handler]->$func($config['host'], $config['port'], $config['timeout']);
+                $config['password'] &&  self::$instance[self::$handler]->auth($config['password']);
             }
         }
         
