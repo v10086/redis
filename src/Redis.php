@@ -27,7 +27,7 @@ class Redis {
             }
         }
         
-        return self::$instance[$handler];
+        return self::$instance[self::$handler];
     }
     
     
